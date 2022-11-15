@@ -45,8 +45,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/debug/{{project-name}}
-          asset_name: {{project-name}}.debug
+          asset_path: ./target/debug/
+          asset_name: replace_me.debug
           asset_content_type: application/octet-stream
 
       - name: Upload Release Build
@@ -55,6 +55,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/release/{{project-name}}
-          asset_name: {{project-name}}
+          asset_path: ./target/release/replace_me
+          asset_name: replace_me
           asset_content_type: application/octet-stream
